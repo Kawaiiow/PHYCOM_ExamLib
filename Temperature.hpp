@@ -7,6 +7,7 @@
  * @brief A class to read temperature from an analog sensor (like TMP36).
  * @details Reads a voltage from an analog pin and converts it to Celsius.
  * The conversion formula assumes a 10mV/°C scale with a 500mV offset.
+ * @image html https://startingelectronics.org/beginners/arduino-tutorial-for-beginners/measure-temperature-with-arduino-and-mcp9700/mcp9700-mcp9700a-pinout.jpg
  */
 class Temperature
 {

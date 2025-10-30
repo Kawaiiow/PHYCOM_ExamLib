@@ -11,7 +11,7 @@
  * @details Reads an analog value from a pin and can scale it.
  * @param pin The analog pin the potentiometer is connected to.
  * @param cap The upperbound of the mapped value (e.g., 255).
- * 
+ * @image html rrrhttps://www.jotrin.de/Userfiles/editor/20240321/114802Dual-gang-potentiometer-pinout.jpg
  */
 class Potentiometer
 {

@@ -97,7 +97,7 @@ void	RGBLed::setValue(int RValue, int GValue, int BValue)
 	this->RValue = RValue;
 	this->GValue = GValue;
 	this->BValue = BValue;
-	analogWrite(RPin, RValue);
-	analogWrite(GPin, GValue);
-	analogWrite(BPin, BValue);
+	digitalWrite(RPin, RValue);
+	digitalWrite(GPin, GValue);
+	digitalWrite(BPin, BValue);
 }
