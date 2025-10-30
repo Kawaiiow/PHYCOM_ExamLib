@@ -5,9 +5,10 @@
  * @param pin The analog pin the potentiometer is connected to.
  * @param cap The maximum value to map the potentiometer's reading to.
  */
-Potentiometer::Potentiometer(int pin)
+Potentiometer::Potentiometer(int pin, int cap)
 {
 	this->pin = pin;
+	this->cap = cap;
 	pinMode(pin, INPUT);
 }
 

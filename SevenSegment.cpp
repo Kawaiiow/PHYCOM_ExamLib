@@ -50,10 +50,10 @@ void	SevenSegment::setPin(int pin[8])
  */
 void	SevenSegment::displayNumber(unsigned int n) const
 {
-	if (n < 0 || n > 9)
+	if (n > 9)
 		return ;
 	for (int i = 0; i < 8; i++)
 	{
-		digitalWrite(pin[n], num_array[n][i]);
+		digitalWrite(pin[i], num_array[n][i]);
 	}
 }
