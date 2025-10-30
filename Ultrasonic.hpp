@@ -13,7 +13,7 @@ class Ultrasonic
 
 	public:
 
-		Ultrasonic(const unsigned int trigPing, const unsigned int echoPin);
+		Ultrasonic(const unsigned int trigPin, const unsigned int echoPin);
 		Ultrasonic(const Ultrasonic& obj);
 		~Ultrasonic();
 

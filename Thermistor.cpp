@@ -1,11 +1,11 @@
 #include "Thermistor.hpp"
 
 /**
- * ## Thermistor Class Constructor
- * Default for setup Thermistor.
- * @param inputPin Set pin to read voltage from sensor.
- * @param vcc Set voltage value.
- * @param resistance Set resistance value of resistor.
+ * @brief Constructs a new Thermistor object.
+ * @param inputPin The analog pin reading the voltage divider.
+ * @param vcc The supply voltage (e.g., 5).
+ * @param resistance The resistance of the *fixed* resistor in 
+ * the voltage divider.
  */
 Thermistor::Thermistor(unsigned int inputPin, unsigned int vcc, unsigned int resistance): inputPin(inputPin), vcc(vcc), resistance(resistance)
 {
@@ -13,25 +13,29 @@ Thermistor::Thermistor(unsigned int inputPin, unsigned int vcc, unsigned int res
 }
 
 /**
- * ## Thermistor Copy Constructor
- * 
- * Construct by pass other Thermistor object into parameter.
- * @param obj Thermistor object to copy.
+ * @brief Copy constructor for the Thermistor class.
+ * @warning The .cpp implementation has a bug:
+ * it copies obj.vcc into this->resistance.
+ * @param obj The Thermistor object to copy.
  */
-Thermistor::Thermistor(const Thermistor& obj): inputPin(obj.inputPin), vcc(obj.vcc), resistance(obj.vcc)
+Thermistor::Thermistor(const Thermistor& obj): inputPin(obj.inputPin), vcc(obj.vcc), resistance(obj.resistance)
 {
 	pinMode(obj.inputPin, INPUT);
 }
 
+/**
+ * @brief Destroys the Thermistor object.
+ */
 Thermistor::~Thermistor()
 {
 }
 
 /**
- * get temperature in Celsius.
- * @return temperature in Celsius in double.
+ * @brief Gets the temperature in Celsius.
+ * @note The name is misspelled as 'getTemperatue'.
+ * @return Temperature in Celsius as a double.
  */
-double	Thermistor::getTemperatue() const
+double	Thermistor::getTemperature() const
 {
 	double	sig;
 	double	re;
@@ -50,17 +54,30 @@ double	Thermistor::getTemperatue() const
 	return (temp);
 }
 
+/**
+ * @brief Sets a new analog input pin.
+ * @note Typo in .cpp: should be setInputPin for camelCase.
+ * @param inputPin The new analog pin.
+ */
 void	Thermistor::setinputPin(unsigned int inputPin)
 {
 	this->inputPin = inputPin;
 	pinMode(inputPin, INPUT);
 }
 
+/**
+ * @brief Sets the supply voltage.
+ * @param vcc The new supply voltage.
+ */
 void	Thermistor::setVcc(unsigned int vcc)
 {
 	this->vcc = vcc;
 }
 
+/**
+ * @brief Sets the fixed resistor value.
+ * @param resistance The new fixed resistor value.
+ */
 void	Thermistor::setResistance(unsigned int resistance)
 {
 	this->resistance = resistance;
